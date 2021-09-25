@@ -1,0 +1,37 @@
+
+.Home {
+
+	font-family: 'Poppins', sans-serif;
+}
+
+.ui .hero-header {
+	font-size: 50px !important;
+}
+
+.display-flex {
+	display:flex;
+	gap:1em;
+}
+
+.display-flex-sb {
+	display:flex;
+	justify-content: space-between;
+	margin-top: 1em;
+}
+
+.ui .grid .row .column .section-home {
+
+	margin-top: 30px;
+
+}
+
+
+
+@media screen and (max-width: 600px) {
+  	.ui .hero-header {
+		font-size: 35px !important;
+	}
+	.ui .hero-support {
+		font-size: 20px !important;
+	}
+}

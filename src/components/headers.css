@@ -1,0 +1,22 @@
+
+
+
+.nav{
+	display:grid;	
+	margin: 50px 0 !important;
+	height: 80px;
+	background:  #0E566C;
+}
+
+.ui.center-me {
+	align-items:center;
+	align-self:center;
+}
+.ui .grid .row .whites 	 {
+	color:white;
+}
+.ui .logo {
+
+align-items:center;
+	align-self:center;
+}
