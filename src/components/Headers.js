@@ -1,5 +1,6 @@
 
 import { Container,Image,Grid,Menu ,Icon,Message} from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 import 'semantic-ui-css/semantic.min.css'
 import './headers.css'
@@ -29,6 +30,8 @@ const Headers = () => {
 					          />
 					          <Menu.Item className = 'whites'
 					            name='Register'
+					            as = { Link }
+					            to = '/register'
 					          />
 					          <Menu.Item className = 'whites'
 					            name='Login'

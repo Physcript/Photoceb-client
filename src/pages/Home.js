@@ -1,6 +1,7 @@
 
 
 import { Container,Image,Grid,Menu ,Icon,Message , Header, Segment, Label} from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 import Headers from '../components/Headers'
 

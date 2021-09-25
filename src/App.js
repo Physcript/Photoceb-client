@@ -19,7 +19,6 @@ function App() {
           <div>
             <Route path = '/' exact component = { Home } > <Home /> </Route>
             <Route path = '/register' exact component = { Register } > <Register /> </Route>
-
           </div>
         </Switch>
       </Router>
