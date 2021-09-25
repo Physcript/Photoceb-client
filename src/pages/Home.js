@@ -57,7 +57,7 @@ const Home = () => {
                                         <Grid.Column width = {7}>
                                             <Image src = "https://res.cloudinary.com/dnnq8kne2/image/upload/c_scale,h_273,w_250/v1632553281/charles-deluvio-Mv9hjnEUHR4-unsplash_zgkn1z.jpg" />
                                             <div className = 'display-flex-sb'>
-                                                Followers: 512
+                                                Followers: 412
                                             </div>
                                         </Grid.Column>
                                        
