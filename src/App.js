@@ -4,9 +4,9 @@ import { Container } from 'semantic-ui-react'
 
 // pages
 import Home from './pages/Home'
+import Register from './pages/Register'
 
-// components  
-import Headers from './components/Headers'
+// components 
 
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
@@ -17,8 +17,9 @@ function App() {
       <Router>
         <Switch>
           <div>
-            <Headers/>
             <Route path = '/' exact component = { Home } > <Home /> </Route>
+            <Route path = '/register' exact component = { Register } > <Register /> </Route>
+
           </div>
         </Switch>
       </Router>

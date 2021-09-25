@@ -2,12 +2,17 @@
 
 import { Container,Image,Grid,Menu ,Icon,Message , Header, Segment, Label} from 'semantic-ui-react'
 
+import Headers from '../components/Headers'
+
 import('semantic-ui-css/semantic.min.css')
 import('./home.css')
 
 const Home = () => {
     return(
+
+
         <div className = 'Home'>
+         <Headers/>
             <Container>
                 <Grid stackable>
                     <Grid.Row>
@@ -18,7 +23,7 @@ const Home = () => {
                             </div>
                             <Image src = 'https://res.cloudinary.com/dnnq8kne2/image/upload/v1632551276/tim-mossholder-hOF1bWoet_Q-unsplash_b6jrle.jpg'/>
                             
-                            <div className = 'display-flex-sb'>
+                            <div className = 'display-flex-sb stackable'>
                                 <div className = 'display-flex'>
                                     <p>Like: 122</p>
                                     <p>Coment: 122</p>
