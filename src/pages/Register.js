@@ -1,6 +1,12 @@
 
 
 import { Container,Grid,Icon,Header,Form,Label,Button } from 'semantic-ui-react'
+import { useCreateUser } from '../hooks/usersHook'
+
+
+// pages 
+import Loading from './Loading'
+
 
 import 'semantic-ui-css/semantic.min.css'
 import './register.css'
@@ -24,35 +30,7 @@ const Register = () => {
 								</section>
 							</div>
 						</Grid.Column>
-						<Grid.Column width = { 6 }>
-							<div className = 'register-form'>
-
-								<div className = 'r-form'>
-									<Header as = 'h3' className = 'hero-support'>Register</Header>
-									<br />
-									<div className = 'display-flex-row'>
-										<Header as = 'h5' className = 'hero-support' >Firstname</Header>
-										<Form.Input  fluid	/>	
-										<Header as = 'h5' className = 'hero-support'>Lastname</Header>
-										<Form.Input fluid />	
-										<Header as = 'h5' className = 'hero-support' >Email</Header>
-										<Form.Input  fluid	/>	
-										<Header as = 'h5' className = 'hero-support'>Password</Header>
-										<Form.Input fluid />	
-										<Header as = 'h5' className = 'hero-support'>Confirm Password</Header>
-										<Form.Input fluid />
-										
-											
-									</div>
-
-									<div className = 'grid-2'>
-										<button>Register</button>
-										<button>Cancel</button>
-									</div>
-								</div>
-
-							</div>
-						</Grid.Column>
+						{useCreateUser()}
 					</Grid.Row>
 				</Grid>
 			</Container>
