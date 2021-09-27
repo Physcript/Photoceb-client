@@ -37,6 +37,8 @@ const Headers = () => {
 					          />
 					          <Menu.Item className = 'whites'
 					            name='Login'
+					            as = { Link }
+					            to = '/login'
 					          />
 					    	</Menu>
 						</Grid.Column>
