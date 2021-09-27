@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 import { Container,Grid,Icon,Header,Form,Label,Button,Message } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 
 // pages 
@@ -122,7 +123,7 @@ const useCreateUser = () => {
 
 									<div className = 'grid-2'>
 										<button onClick = { registerHandler } >Register</button>
-										<button>Cancel</button>
+										<Button as = { Link } to = '/'>Cancel</Button>
 									</div>
 						
 								</div>

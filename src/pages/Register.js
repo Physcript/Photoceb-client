@@ -1,6 +1,7 @@
 
 
 import { Container,Grid,Icon,Header,Form,Label,Button } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 import { useCreateUser } from '../hooks/usersHook'
 
 
@@ -16,7 +17,7 @@ const Register = () => {
 		<div className = 'Register'>
 			<Container>
 				<div className = 'display-flex'>
-					<Icon name = 'arrow left' />
+					<Button icon = 'arrow left' as = {Link} to = '/'/>
 					<p>Back to home screen</p>
 				</div>
 
