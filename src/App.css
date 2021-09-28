@@ -5,3 +5,35 @@
 .gap {  
 	gap: 1em;
 }
+
+
+.v-align {
+    display: flex !important;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+
+
+.ul-default {
+	display:flex;
+	list-style-type:none;
+	width: 100%;
+	padding:0;
+	margin:0;
+	text-align:center;
+	align-items:center;
+	align-self:center;
+	justify-content:right;
+}
+
+.ul-default li {
+	padding: 10px;
+}
+
+.logo-fix {
+	width: 25px !important;
+	height: 25px;
+}
