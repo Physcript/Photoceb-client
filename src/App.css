@@ -37,3 +37,25 @@
 	width: 25px !important;
 	height: 25px;
 }
+
+.dash .ui .grid .row{
+
+}
+
+.padding-1 {
+	padding:10px;
+}
+
+.display-inline-flex {
+
+	display: inline-flex;
+}
+.display-flex-column {
+	display:flex;
+	flex-direction: column;
+}
+.v-align-only {
+    display: flex !important;
+    align-items: center;
+    margin-bottom: 0;
+}

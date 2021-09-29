@@ -1,0 +1,10 @@
+
+
+.dash {
+	background: #f7f3f2;
+	height:100%;
+}
+
+.dash .ui .grid .row {
+	padding-bottom: 0;
+}

@@ -7,39 +7,46 @@ import { Link,useHistory } from 'react-router-dom'
 import { useUser } from '../hooks/usersHook'
 
 import 'semantic-ui-css/semantic.min.css'
+import './home-header.css'
 
  
-const HomeHeader = () => {
+const HomeHeader = ( {props} ) => {
 	const history = useHistory()
 
-	const [ user,setUser ] = useState ({
-		_id: '',
-		firstName: '',
-		lastName: '',
-		email:'',
-		verified: '',
-	})
+	const [ user,setUser ] = useState ({})
 
-	const { data,loading,error,refetch } = useUser()
+	
+
 
 
 	useEffect(()=>{
-		if(data){
-			refetch()
-			setUser( (val) => ({
-				...val,
-				_id: data.checkAuth._id,
-				firstName: data.checkAuth.firstName,
-				lastName: data.checkAuth.lastName,
-				email: data.checkAuth.email,
-				verified: data.checkAuth.verified
-			}))
 
+		{
+		/*
+		// if(data){
+		// 	refetch()
+		// 	setUser( (val) => ({
+		// 		...val,
+		// 		_id: data.checkAuth._id,
+		// 		firstName: data.checkAuth.firstName,
+		// 		lastName: data.checkAuth.lastName,
+		// 		email: data.checkAuth.email,
+		// 		verified: data.checkAuth.verified
+		// 	}))
+
+		// }
+		*/
 		}
-	},[data,Link])
+
+		if(props){
+			setUser( props )
+		}
+
+	},[props])
 
 	return(
-		<div className = 'HomeHeader'>
+		<div className = 'HomeHeader' >
+			<Container>
 			<Grid>
 				<Grid.Row className = 'middle aligned row' >
 					<Grid.Column computer = { 1 } mobile = { 3 } tablet = { 3 }  className = 'v-align' >
@@ -50,7 +57,7 @@ const HomeHeader = () => {
 					</Grid.Column>
 
 					<Grid.Column className = 'right floated' tablet = { 3 } mobile = { 3 } computer = { 1 }>
-						<Image className = 'floated right' src = { user.image ? user.image : 'https://res.cloudinary.com/dnnq8kne2/image/upload/c_scale,h_30,w_30/v1632408683/ucgxnbq2q0re1suhd6kp.jpg' } circular />
+						<Image className = 'floated right' src = { user.image } circular />
 					</Grid.Column>
 					<Grid.Column>
 						{ user.firstName }
@@ -68,6 +75,7 @@ const HomeHeader = () => {
 					</Grid.Column>
 				</Grid.Row>
 			</Grid>
+			</Container>
 		</div>
 	)
 }
