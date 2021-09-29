@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { Container,Grid,Icon,Header,Form,Label,Button,Message } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
@@ -9,10 +9,26 @@ import Loading from '../pages/Loading'
 
 import { CREATE_USER_MUTATION } from '../graphql/mutation/user_mutation' 
 import { useMutation } from '@apollo/client'
-
+import { USER_INFO_QUERY } from '../graphql/query/user_query'
+import { useQuery } from '@apollo/client'
 
 
 import 'semantic-ui-css/semantic.min.css'
+
+const useUser = () => {
+
+	let { data,loading,error ,refetch} = useQuery(USER_INFO_QUERY)
+
+	useEffect(() => {
+		if(data){
+			console.log(data)
+		}
+	},[data])
+
+	return(
+		{data,loading,error,refetch}
+	)	
+}
 
 
 const useCreateUser = () => {
@@ -136,6 +152,7 @@ const useCreateUser = () => {
 
 export {
 
-	useCreateUser
+	useCreateUser,
+	useUser
 }
 

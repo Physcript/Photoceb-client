@@ -22,6 +22,8 @@ const Headers = () => {
 					          <Menu.Item className = 'whites'
 					            name = 'Home'
 					            position = 'right'
+					            as = { Link }
+					            to = '/home'
 
 					          />
 					          <Menu.Item  className = 'whites'
