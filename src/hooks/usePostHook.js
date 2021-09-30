@@ -2,8 +2,14 @@
 import { useState,useEffect } from 'react'
 
 import { useMutation } from '@apollo/client'
-import { CREATE_POST_MUTATION } from '../graphql/mutation/post_mutation'
+import { CREATE_POST_MUTATION,DELETE_POST_IMAGE_MUTATION } from '../graphql/mutation/post_mutation'
 
+
+export const useDeletePostImage = (product_id) => {
+
+	const [ deletImage ] = useMutation(DELETE_POST_IMAGE_MUTATION)
+	
+}
 
 export const useCreatePost = ( image ) => {
 	
@@ -25,8 +31,9 @@ export const useCreatePost = ( image ) => {
 	},[ data ])
 
 	return (
-		<> data </>
+		 data 
 	)
 }
+
 
 

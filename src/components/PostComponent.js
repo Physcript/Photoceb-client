@@ -4,10 +4,12 @@ import { Container,Grid,Image,Icon,Button,Input,Modal,Loader,Dimmer,Segment } fr
 
 import defaultImage from './default.png'
 
-import { useCreatePost } from '../hooks/usePostHook'
+import { useCreatePost, useDeletePostImage } from '../hooks/usePostHook'
 import { useMutation,useQuery } from '@apollo/client'
-import { CREATE_POST_MUTATION } from '../graphql/mutation/post_mutation'
+import { CREATE_POST_MUTATION,DELETE_POST_IMAGE_MUTATION } from '../graphql/mutation/post_mutation'
 import { USER_INFO_QUERY } from '../graphql/query/user_query'
+
+import PostButtonComp from './PostButtonComp'
 
 import 'semantic-ui-css/semantic.min.css'
 import './post-components.css'
@@ -37,6 +39,18 @@ const PostComponent = ({props}) => {
 	const [image,setImage] = useState({})
 
 	const [ getUrl, { data, error,loading } ] = useMutation(CREATE_POST_MUTATION)
+	const [ deleteImage ] = useMutation(DELETE_POST_IMAGE_MUTATION, {
+		update(proxy,result){
+
+			console.log(result)
+		}
+	})
+
+
+	const [postUpdate,setPostUpdate] = useState({
+
+	})	
+
 
 	const fileHandler = (e) => {
 		const file = e.target.files[0]
@@ -46,9 +60,22 @@ const PostComponent = ({props}) => {
 	}
 
 	const onCloseModal = () => {
-		dispatch({ type: 'close' })
-		setImage('')
+
+			deleteImage({
+				variables:{
+					public_id: image.public_id
+				}
+			})
+
+			if(!loading){
+				dispatch({ type: 'close' })
+			}
+	
 	} 
+
+	const onPostModal = () => {
+		console.log('asd')
+	}
 
 	useEffect( () => {
 		if(data){
@@ -94,16 +121,12 @@ const PostComponent = ({props}) => {
 		    		</Segment>
 		    	</div>
 		    	<div className = 'display-flex'>
-		    		<Button style = {{ background:'#0E566C', color: 'white' }}>Post</Button>
-		    		<Button style = {{ background:'#0E566C', color: 'white' }}>Cancel</Button>
+		    		<PostButtonComp dataTest = { val => setPostUpdate(val) } props = { image.url }  />
+		    		<Button style = {{ background:'#0E566C', color: 'white' }} onClick = { onCloseModal } >Cancel</Button>
 		    	</div>
 		    </div>
 		    </Modal>
 		</div>
-
-
-
-
 
 	)
 }
