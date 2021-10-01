@@ -73,8 +73,15 @@ const PostComponent = ({props}) => {
 	
 	} 
 
-	const onPostModal = () => {
-		console.log('asd')
+	const onPostModal = (val) => {
+		const { data: postData, loading: postLoading, error: postError} = val
+
+		if(postData){
+			dispatch({ type: 'close' })
+		}
+
+		setPostUpdate( val )
+		
 	}
 
 	useEffect( () => {
@@ -118,10 +125,12 @@ const PostComponent = ({props}) => {
 			    		) : (
 			    		<Image src = { image.url } fluid />
 			    		) }
+
+
 		    		</Segment>
 		    	</div>
 		    	<div className = 'display-flex'>
-		    		<PostButtonComp dataTest = { val => setPostUpdate(val) } props = { image.url }  />
+		    		<PostButtonComp dataTest = { val => onPostModal(val) } props = { image.url }  />
 		    		<Button style = {{ background:'#0E566C', color: 'white' }} onClick = { onCloseModal } >Cancel</Button>
 		    	</div>
 		    </div>

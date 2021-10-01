@@ -38,16 +38,12 @@ const PostButtonComp = ({dataTest,props}) => {
 		})
 
 
+
+
 	}
 
 	useEffect( () => {
 
-		if(data){
-			setMyData( e => ({
-				data,loading,error,called
-			}) )
-
-		}
 
 
 		dataTest({data,loading,error,called})
