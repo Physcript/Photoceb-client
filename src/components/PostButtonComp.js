@@ -7,15 +7,15 @@ import { CREATE_POST_V2_MUTATION } from '../graphql/mutation/post_mutation'
 
 const PostButtonComp = ({dataTest,props}) => {
 
-	const [ post,setPost ] = useState({
-		image: ''
-	})
+
+
+	const [ post,setPost ] = useState({props})
 
 	const [ myData , setMyData ] = useState({
 		data: undefined,
 		loading: undefined,
 		error: undefined,
-		called: undefined,	
+		called: undefined,		
 	})
 
 
@@ -27,18 +27,11 @@ const PostButtonComp = ({dataTest,props}) => {
 
 	const postHandler = () => {
 
-		setPost( (e) => ({ ...e,
-			image: props
-		}))
-
 		createPost({
 			variables:{
-				image: post.iamge
+				image: post
 			}
 		})
-
-
-
 
 	}
 
@@ -47,9 +40,9 @@ const PostButtonComp = ({dataTest,props}) => {
 
 
 		dataTest({data,loading,error,called})
-		
+		setPost(props)
 
-	},[data,called,loading])
+	},[data,called,loading,props])
 
 	return (
 		<Button style = {{ background:'#0E566C', color: 'white' }} onClick = { postHandler }>Post</Button>

@@ -6,6 +6,7 @@ import { Container,Grid,Button,Label,Header,Form } from 'semantic-ui-react'
 
 import HomeHeader from '../components/HomeHeader'
 import PostComponent from '../components/PostComponent'
+import PostDataComponent from '../components/PostDataComponent'
  
 
 // import { useMutation } from '@apollo/client'
@@ -56,18 +57,24 @@ const Dash = () => {
 						<Grid.Column computer = { 12 } tablet = { 12 } mobile = {16}>
 
 							<Grid>
-								<Grid.Row>
-
+								<Grid.Row>	
 									<Grid.Column className = 'column centered padding-1' computer = {5} tablet = {7} mobile = {12}  >
 										<PostComponent props = { user }  />
 									</Grid.Column>
 								</Grid.Row>
+								<Grid.Row>
+									<Grid.Column className = 'column centered padding-1' computer = { 12 } tablet = { 12 } mobile = { 12 } >
+										<PostDataComponent props = { user }/>
+									</Grid.Column>
+								</Grid.Row>
 							</Grid>
 
-						</Grid.Column>
+						</Grid.Column >
+
 						<Grid.Column width = { 4 } className = '' only = 'computer tablet wide'>
 						Left Panel
 						</Grid.Column>
+
 					</Grid.Row>
 				</Grid>
 		</div>

@@ -84,6 +84,7 @@ const PostComponent = ({props}) => {
 		
 	}
 
+
 	useEffect( () => {
 		if(data){
 			setImage(data.createPost)
