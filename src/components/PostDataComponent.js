@@ -5,7 +5,7 @@ import { Container,Grid,Button,Label,Header,Form, Image, Icon} from 'semantic-ui
 import { useQuery,useMutation } from '@apollo/client'
 import { getPost } from '../graphql/query/post_query'
 
-
+import LikeDislikeComponent from './LikeDislikeComponent'
 
 import 'semantic-ui-css/semantic.min.css'
 import './post-data-component.css'
@@ -96,10 +96,7 @@ const PostDataComponent = ({props}) => {
 
 						</div>
 
-						<div className = 'padding-1 gap display-flex'>
-							<Button>Like</Button>
-							<Button>Dislike</Button>
-						</div>
+						<LikeDislikeComponent props = {e} />
 
 					</Grid.Column>
 				</Grid.Row>

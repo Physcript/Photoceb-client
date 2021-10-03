@@ -22,3 +22,13 @@ export const getPost = gql`
 	}
 
 `
+
+
+export const getCountLikeDislike = gql`
+	query getCountLikeDislike($postId: String){
+		getCountLikeDislike(postId: $postId){
+			countLike
+			countDislike
+		}
+	}
+`

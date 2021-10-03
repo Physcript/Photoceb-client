@@ -29,3 +29,15 @@ export const CREATE_POST_V2_MUTATION = gql`
 		}
 	}
 `
+
+export const CREATE_LIKE_MUTATION = gql`
+	mutation createLike($postId: String){
+		createLike(postId: $postId)
+	}
+`
+
+export const CREATE_DISLIKE_MUTATION = gql`
+	mutation createDislike($postId: String){
+		createDislike(postId: $postId)
+	}
+`
