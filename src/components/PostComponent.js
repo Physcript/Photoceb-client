@@ -9,6 +9,9 @@ import { useMutation,useQuery } from '@apollo/client'
 import { CREATE_POST_MUTATION,DELETE_POST_IMAGE_MUTATION } from '../graphql/mutation/post_mutation'
 import { USER_INFO_QUERY } from '../graphql/query/user_query'
 
+
+import  PostDataComponent from './PostDataComponent'
+
 import PostButtonComp from './PostButtonComp'
 
 import 'semantic-ui-css/semantic.min.css'
@@ -28,6 +31,7 @@ function modelReducer(state,action){
 
 
 const PostComponent = ({props}) => {
+
 
 	const [ state , dispatch ] = React.useReducer( modelReducer, {
 		open: false
@@ -76,12 +80,12 @@ const PostComponent = ({props}) => {
 	const onPostModal = (val) => {
 		const { data: postData, loading: postLoading, error: postError} = val
 
+
 		if(postData){
 			dispatch({ type: 'close' })
 		}
 
 		setPostUpdate( val )
-		
 	}
 
 
@@ -92,6 +96,7 @@ const PostComponent = ({props}) => {
 		if(props){
 			setUser( props )
 		}
+
 	},[data,props]) 
 
 	return (

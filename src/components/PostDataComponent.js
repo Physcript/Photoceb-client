@@ -32,11 +32,12 @@ const PostDataComponent = ({props}) => {
 		setLimit( limit + 2 )
 	}
 
-	const { data,loading,error,called }= useQuery(getPost,{
+	const   { data: postData2,loading,error,called, refetch: postRefetch }= useQuery(getPost,{
 		variables:{
 			limit
 		},
 		onCompleted: val => {
+
 			window.onscroll = () => {
 			
 			if( document.documentElement.scrollHeight - document.documentElement.scrollTop === window.innerHeight ) {
@@ -60,9 +61,14 @@ const PostDataComponent = ({props}) => {
 		}) )
 
 
-		if(data) setPost(data.getPost) 
+		if(postData2) {
+			setPost(postData2.getPost)
+		
+		} 
 
-	},[props,data])
+
+
+	},[props,postData2])
 
 	return(
 
@@ -90,9 +96,9 @@ const PostDataComponent = ({props}) => {
 				<Grid.Row style = {{ padding: 0 }}>
 					<Grid.Column tablet = { 16 } computer = { 12 }	 className = 'centered grid' >
 
-						<div className = 'padding-1'>
+						<div className = 'padding-1 b-white' >
 
-							<Image src = { e.image } />
+							<Image src = { e.image } style = {{ maxHeight: '500px' }} centered />
 
 						</div>
 

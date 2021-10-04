@@ -22,6 +22,8 @@ import 'semantic-ui-css/semantic.min.css'
 import './dash.css'
 
 const Dash = () => {
+
+	const [ postRefetch , setPostRefetch ] = useState()
 	
 	const [ user, setUser ] = useState ({
 		_id: '',
@@ -59,7 +61,8 @@ const Dash = () => {
 							<Grid>
 								<Grid.Row>	
 									<Grid.Column className = 'column centered padding-1' computer = {5} tablet = {7} mobile = {12}  >
-										<PostComponent props = { user }  />
+										<PostComponent props = { user } />
+
 									</Grid.Column>
 								</Grid.Row>
 								<Grid.Row>

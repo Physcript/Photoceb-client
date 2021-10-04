@@ -26,7 +26,7 @@ const LikeDislikeComponent = ({props}) => {
 	const [likeMutation , { data: likeData ,loading: likeLoading ,error: likeError } ] = useMutation(CREATE_LIKE_MUTATION)
 	const [dislikeMutation, { data: dislikeData , loading: dislikeLoading, error: dislikeError } ] = useMutation(CREATE_DISLIKE_MUTATION)
 	const likeHandler = (e) => {
-
+		e.preventDefault()
 		likeMutation({
 			variables: {
 				postId: post._id
@@ -37,7 +37,7 @@ const LikeDislikeComponent = ({props}) => {
 	}
 
 	const dislikeHandler = (e) => {
-
+		e.preventDefault()
 		dislikeMutation({
 			variables:{
 				postId: post._id

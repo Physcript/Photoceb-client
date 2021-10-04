@@ -5,6 +5,8 @@ import { Button } from 'semantic-ui-react'
 import { useMutation } from '@apollo/client'
 import { CREATE_POST_V2_MUTATION } from '../graphql/mutation/post_mutation'
 
+import { getPost } from '../graphql/query/post_query'
+
 const PostButtonComp = ({dataTest,props}) => {
 
 
@@ -19,10 +21,11 @@ const PostButtonComp = ({dataTest,props}) => {
 	})
 
 
-	const [ createPost, { data,loading,error,called }] = useMutation(CREATE_POST_V2_MUTATION,{
-		update(result,proxy){
-
-		}
+	const [ createPost, { data,loading,error,called,fetch }] = useMutation(CREATE_POST_V2_MUTATION,{
+		refetchQueries: [
+			getPost,
+			'getPost'
+		]
 	})
 
 	const postHandler = () => {
