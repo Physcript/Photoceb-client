@@ -32,3 +32,12 @@ export const getCountLikeDislike = gql`
 		}
 	}
 `
+
+export const GET_INFO_LIKE_BUTTON_QUERY = gql`
+	query getLikeInfo($postId:String){
+		getLikeInfo(postId:$postId){
+			like
+			dislike
+		}
+	}
+`
